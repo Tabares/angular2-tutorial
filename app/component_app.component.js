@@ -1,4 +1,4 @@
-System.register(["angular2/core"], function(exports_1, context_1) {
+System.register(["angular2/core", './item-list.component', './datadisplay_app.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,12 +10,18 @@ System.register(["angular2/core"], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, item_list_component_1, datadisplay_app_component_1;
     var DataComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (item_list_component_1_1) {
+                item_list_component_1 = item_list_component_1_1;
+            },
+            function (datadisplay_app_component_1_1) {
+                datadisplay_app_component_1 = datadisplay_app_component_1_1;
             }],
         execute: function() {
             DataComponent = (function () {
@@ -23,10 +29,11 @@ System.register(["angular2/core"], function(exports_1, context_1) {
                 }
                 DataComponent = __decorate([
                     core_1.Component({
-                        selector: 'data-app'
+                        selector: 'data-app',
                     }),
                     core_1.View({
-                        template: '<h3>Welcome to {{data}}</h3>'
+                        template: "\n    <h3>Welcome to {{data}}</h3>\n    <h4>Embeding components on the view<h4>\n    <hr>\n    <h4>1.- Component List<h4>\n    <my-list></my-list>\n    <hr>\n    <h4>2.- Component List<h4>\n    <my-information></my-information>\n    <hr>\n  ",
+                        directives: [item_list_component_1.ItemComponent, datadisplay_app_component_1.InformationComponent],
                     }), 
                     __metadata('design:paramtypes', [])
                 ], DataComponent);
